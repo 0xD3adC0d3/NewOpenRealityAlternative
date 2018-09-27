@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="nora" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="Release">
+				<Option output="../output/N.O.R.A" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Release/" />
+				<Option type="0" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-O2" />
+					<Add directory="../libs/include" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+					<Add library="../libs/libirrKlang.a" />
+					<Add library="../libs/libIrrlicht.a" />
+				</Linker>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add option="-Wall" />
+			<Add option="-fexceptions" />
+		</Compiler>
+		<Unit filename="Ammo.cpp" />
+		<Unit filename="Ammo.h" />
+		<Unit filename="Building.cpp" />
+		<Unit filename="Building.h" />
+		<Unit filename="Game.cpp" />
+		<Unit filename="Game.h" />
+		<Unit filename="GraphicsUtils.cpp" />
+		<Unit filename="GraphicsUtils.h" />
+		<Unit filename="MainMenu.cpp" />
+		<Unit filename="MainMenu.h" />
+		<Unit filename="Map.cpp" />
+		<Unit filename="Map.h" />
+		<Unit filename="Player.cpp" />
+		<Unit filename="Player.h" />
+		<Unit filename="PlayerWeapon.cpp" />
+		<Unit filename="PlayerWeapon.h" />
+		<Unit filename="Target.cpp" />
+		<Unit filename="Target.h" />
+		<Unit filename="WonderEventReceiver.cpp" />
+		<Unit filename="WonderEventReceiver.h" />
+		<Unit filename="main.cpp" />
+		<Extensions>
+			<code_completion />
+			<envvars />
+			<debugger />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>
