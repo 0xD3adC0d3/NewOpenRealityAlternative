@@ -10,7 +10,7 @@ class GraphicsUtils{
 		int getScreenW();
 		int getScreenH();
 
-		void setParams(irr::IrrlichtDevice *deviceP);
+		void setParams(irr::IrrlichtDevice *deviceP, int w, int h);
 		irr::IrrlichtDevice                *getDevice();
 
 		void crosshair();

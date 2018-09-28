@@ -18,6 +18,7 @@ Game::Game(int w, int h, bool fs){
     screenW = w;
     screenH = h;
     fullScreen = fs;
+
     //Irrlicht start
     startGraphics();
 
@@ -75,7 +76,7 @@ void Game::startGraphics(){
 	smgr = device->getSceneManager();
 	driver = device->getVideoDriver();
     selectorGlobal = smgr->createMetaTriangleSelector();
-    gu.setParams(device);
+    gu.setParams(device, screenW, screenH);
     device->getCursorControl()->setVisible(false);
 
     guienv = device->getGUIEnvironment();
@@ -83,8 +84,8 @@ void Game::startGraphics(){
     skin->setColor(EGDC_BUTTON_TEXT, SColor(255, 255, 255, 255));
     skin->setFont(guienv->getFont("media/fonts/fontlucida.png"));
 
-    text0 = guienv->addStaticText(L"Ammo : ", rect<s32>(gu.getScreenW()*0.9, gu.getScreenH()*0.97, gu.getScreenW()-5, gu.getScreenH()-5));
+    text0 = guienv->addStaticText(L"Ammo : ", rect<s32>(gu.getScreenW()*0.8, gu.getScreenH()*0.97, gu.getScreenW()-5, gu.getScreenH()-5));
     text0->setOverrideColor(SColor(255, 0, 255, 0));
-    text1 = guienv->addStaticText(L"Health : ", rect<s32>(gu.getScreenW()*0.9, gu.getScreenH()*0.94, gu.getScreenW()-5, gu.getScreenH()-5));
+    text1 = guienv->addStaticText(L"Health : ", rect<s32>(gu.getScreenW()*0.8, gu.getScreenH()*0.94, gu.getScreenW()-5, gu.getScreenH()-5));
     text1->setOverrideColor(SColor(255, 0, 255, 0));
 }

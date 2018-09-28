@@ -7,8 +7,8 @@ using namespace core;
 using namespace gui;
 
 GraphicsUtils::GraphicsUtils(){
-    screenW = 1366;
-	screenH = 768;
+    screenW = 0;
+	screenH = 0;
 	driver = 0;
 	device = 0;
 }
@@ -21,9 +21,12 @@ int GraphicsUtils::getScreenW(){
     return screenW;
 }
 
-void GraphicsUtils::setParams(IrrlichtDevice *deviceP){
+void GraphicsUtils::setParams(IrrlichtDevice *deviceP, int w, int h){
     device = deviceP;
     driver = device->getVideoDriver();
+
+    screenW = w;
+	screenH = h;
 }
 
 void GraphicsUtils::crosshair(){

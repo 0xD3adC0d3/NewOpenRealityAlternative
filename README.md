@@ -9,7 +9,6 @@ Libraries used:
  - IrrKlang for sounds
 	
 TODO (I may need your help):
- - Better handling of screen resolution
  - Display ammo when shot (they disappeared when I removed the physics part)
  - Debug the Target class (it disappeared when I removed the physics part)
  - In game pause menu when pressing the escape key

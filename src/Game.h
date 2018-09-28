@@ -11,7 +11,6 @@ class Game{
         Game(int w, int h, bool fs);
 
     private:
-        void startPhysics();
         void startGraphics();
         void collisionCallBack();
 
