@@ -12,7 +12,7 @@ class MainMenu : public irr::IEventReceiver{
         virtual bool OnEvent(const irr::SEvent& event);
 
     private:
-        irr::IrrlichtDevice    *MenuDevice;
+        irr::IrrlichtDevice    *menuDevice;
         irr::gui::IGUIButton   *spButton;
         irr::gui::IGUIButton   *quitButton;
         irr::gui::IGUIComboBox *resolutionBox;

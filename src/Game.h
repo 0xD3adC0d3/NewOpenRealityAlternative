@@ -8,7 +8,8 @@
 
 class Game{
     public:
-        Game(int w, int h, bool fs);
+        Game();
+        void start(int w, int h, bool fs);
 
     private:
         void startGraphics();

@@ -14,7 +14,10 @@ using namespace scene;
 using namespace gui;
 using namespace irrklang;
 
-Game::Game(int w, int h, bool fs){
+Game::Game(){
+}
+
+void Game::start(int w, int h, bool fs){
     screenW = w;
     screenH = h;
     fullScreen = fs;
@@ -72,6 +75,11 @@ void Game::startGraphics(){
 	receiver = WonderEventReceiver();
 	device = createDevice(EDT_OPENGL, dimension2d<u32>(screenW, screenH), 32, fullScreen, false, false, &receiver);
     device->setEventReceiver(&receiver);
+
+    if(fullScreen == false){
+        stringw str = "N.O.R.A.";
+        device->setWindowCaption(str.c_str());
+    }
 
 	smgr = device->getSceneManager();
 	driver = device->getVideoDriver();

@@ -17,7 +17,6 @@
 					<Add directory="../libs/include" />
 				</Compiler>
 				<Linker>
-					<Add option="-s" />
 					<Add library="../libs/libirrKlang.a" />
 					<Add library="../libs/libIrrlicht.a" />
 				</Linker>
@@ -51,7 +50,9 @@
 		<Extensions>
 			<code_completion />
 			<envvars />
-			<debugger />
+			<debugger>
+				<search_path add="C:\Program Files (x86)\CodeBlocks\MinGW\gdb32\bin" />
+			</debugger>
 		</Extensions>
 	</Project>
 </CodeBlocks_project_file>

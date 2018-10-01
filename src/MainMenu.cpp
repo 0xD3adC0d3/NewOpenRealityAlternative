@@ -9,20 +9,20 @@ using namespace core;
 using namespace gui;
 using namespace scene;
 
-MainMenu::MainMenu() : spButton(0), quitButton(0), MenuDevice(0), start(0){
+MainMenu::MainMenu() : spButton(0), quitButton(0), menuDevice(0), start(0){
     screenW = 800;
     screenH = 600;
     fullScreen = false;
 }
 
 int MainMenu::run(){
-	MenuDevice = createDevice(EDT_OPENGL, dimension2d<u32>(512, 384), 16, false, false, false, this);
-	IVideoDriver    *driver = MenuDevice->getVideoDriver();
-	ISceneManager   *smgr   = MenuDevice->getSceneManager();
-	IGUIEnvironment *guienv = MenuDevice->getGUIEnvironment();
+    menuDevice = createDevice(EDT_OPENGL, dimension2d<u32>(512, 384), 16, false, false, false, this);
+	IVideoDriver    *driver = menuDevice->getVideoDriver();
+	ISceneManager   *smgr   = menuDevice->getSceneManager();
+	IGUIEnvironment *guienv = menuDevice->getGUIEnvironment();
 
 	stringw str = "N.O.R.A.";
-	MenuDevice->setWindowCaption(str.c_str());
+	menuDevice->setWindowCaption(str.c_str());
 
 	IGUIFont* font = guienv->getFont("media/fonts/fonthaettenschweiler.bmp");
 	guienv->getSkin()->setFont(font);
@@ -47,7 +47,7 @@ int MainMenu::run(){
 
 	const wchar_t* text = L"N.O.R.A.\n"\
                           L"New Open Reality Alternative\n"\
-                          L"\nA 3D game engine powered by IrrLicht, IrrKlang and Bullet physics.";
+                          L"\nA 3D game engine powered by IrrLicht and IrrKlang.";
 
 	guienv->addStaticText(text, rect<int>(10, 10, 230, 320), true, true, aboutTab);
 
@@ -69,8 +69,8 @@ int MainMenu::run(){
 	ITexture* irrlichtBack = driver->getTexture("media/menu/demoback.jpg");
 	driver->setTextureCreationFlag(ETCF_CREATE_MIP_MAPS, oldMipMapState);
 
-	while(MenuDevice->run()){
-		if (MenuDevice->isWindowActive()){
+	while(menuDevice->run()){
+		if (menuDevice->isWindowActive()){
 			driver->beginScene(false, true, SColor(0,0,0,0));
 			if (irrlichtBack)
 				driver->draw2DImage(irrlichtBack, position2d<int>(0,0));
@@ -80,7 +80,7 @@ int MainMenu::run(){
 			driver->endScene();
 		}
 	}
-	MenuDevice->drop();
+	menuDevice->drop();
 	return start;
 }
 int MainMenu::getScreenH(){
@@ -101,13 +101,13 @@ bool MainMenu::OnEvent(const SEvent& event){
 		switch(id){
 		    case 0:
                 if (event.GUIEvent.EventType == EGET_BUTTON_CLICKED){
-                    MenuDevice->closeDevice();
+                    menuDevice->closeDevice();
                     start = 1;
                 }
                 break;
             case 1:
                 if (event.GUIEvent.EventType == EGET_BUTTON_CLICKED){
-                    MenuDevice->closeDevice();
+                    menuDevice->closeDevice();
                     start = 0;
                 }
                 break;

@@ -6,12 +6,12 @@ using namespace irr;
 using namespace video;
 
 int main(){
-	MainMenu menu;
-	int action = menu.run();
+    MainMenu menu;
 
-	if(action == 1){
-        Game g = Game(menu.getScreenW(), menu.getScreenH(), menu.getFullScreen());
-	}
+    if(menu.run() == 1){
+        Game g;
+        g.start(menu.getScreenW(), menu.getScreenH(), menu.getFullScreen());
+    }
 
     return 0;
 }
