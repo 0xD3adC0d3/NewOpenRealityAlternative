@@ -13,38 +13,27 @@ using namespace scene;
 using namespace gui;
 using namespace irrklang;
 
-Game::Game(){
-}
-
 void Game::start(int w, int h, bool fs){
     screenW = w;
     screenH = h;
     fullScreen = fs;
 
-    //Irrlicht start
     startGraphics();
-
-	//Map
     Map(smgr, driver, selectorGlobal);
 
-    //IrrKlang start
     ISoundEngine *soundEngine = createIrrKlangDevice();
     soundEngine->play2D("media/sounds/getout.ogg", true);
 
-    //Camera - player
 	Player player = Player(smgr, driver, selectorGlobal, soundEngine, text0, text1);
 
 	receiver.setParams(&player, &gu);
 	selectorGlobal->drop();
 
-	//Drawing
 	u32 timeStamp = device->getTimer()->getTime(), deltaTime = 0;
-
     while(device->run() && receiver.getKeepPlaying()){
 		if (device->isWindowActive()){
 			deltaTime = device->getTimer()->getTime() - timeStamp;
             timeStamp = device->getTimer()->getTime();
-
             driver->beginScene(true, true, 0);
             smgr->drawAll();
             guienv->drawAll();

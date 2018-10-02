@@ -7,7 +7,6 @@
 
 class Game{
     public:
-        Game();
         void start(int w, int h, bool fs);
 
     private:
