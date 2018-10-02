@@ -10,9 +10,8 @@ Libraries used:
 	
 TODO (I may need your help):
  - Display ammo when shot (they disappeared when I removed the physics part)
- - Debug the Target class (it disappeared when I removed the physics part)
- - In game pause menu when pressing the escape key
  - Back to main menu after death
+ - In game pause menu when pressing the escape key
  - Bigger city by putting 8 times the same model arround the first central one (not sure if well explained) --> easy, I'll do it soon
  - NPC AI for single player mode (could be simple zombies in the beginning, I love zombies)
  - A map editor (no need for a separate binary since we're working on a game engine and not really a game)

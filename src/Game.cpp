@@ -5,7 +5,6 @@
 #include "Map.h"
 #include "GraphicsUtils.h"
 #include "Player.h"
-#include "Target.h"
 
 using namespace irr;
 using namespace video;
@@ -32,10 +31,7 @@ void Game::start(int w, int h, bool fs){
     ISoundEngine *soundEngine = createIrrKlangDevice();
     soundEngine->play2D("media/sounds/getout.ogg", true);
 
-    //Target
-    target = new Target(256, &gu); // Warning! this may not work properly (can't see it in game)
-
-	//Camera - player
+    //Camera - player
 	Player player = Player(smgr, driver, selectorGlobal, soundEngine, text0, text1);
 
 	receiver.setParams(&player, &gu);
@@ -65,7 +61,6 @@ void Game::start(int w, int h, bool fs){
 	}
 
     device->closeDevice();
-	delete target;
     soundEngine->drop();
 	device->drop();
 }

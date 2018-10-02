@@ -4,7 +4,6 @@
 #include <irrlicht.h>
 #include "GraphicsUtils.h"
 #include "WonderEventReceiver.h"
-#include "Target.h"
 
 class Game{
     public:
@@ -24,7 +23,6 @@ class Game{
         irr::gui::IGUIStaticText            *text0;
 		irr::gui::IGUIStaticText            *text1;
         irr::scene::IMetaTriangleSelector   *selectorGlobal;
-        Target                              *target;
 
         int screenW;
         int screenH;
